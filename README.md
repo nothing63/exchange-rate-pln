@@ -1,4 +1,4 @@
-# Exchange rate PLN GUI app with Python and Tkinter.
-This app created in Python with Tkinter.  
-App is downloading data from [National Bank of Poland](https://www.nbp.pl/home.aspx?f=/kursy/kursyc.html) website.  
+# GUI PLN exchange app in Python with Tkinter.
+This app was created in Python with Tkinter.  
+It is downloading data from [National Bank of Poland's](https://www.nbp.pl/home.aspx?f=/kursy/kursyc.html) website.  
 ![](images/app.png)
