@@ -8,10 +8,13 @@ tk.resizable(False, False)
 
 def returnEntry(arg=None):
     global ms
-    ms = myEntry.get()
-    if(ms==""):
+    
+    try:
+        ms = int(enterMS.get())
+    except:
         ms = 500
-    myEntry.destroy()
+
+    enterMS.destroy()
     resultLabel.destroy()
     infoLabel.destroy()
     mainFunction()
@@ -19,10 +22,10 @@ def returnEntry(arg=None):
 resultLabel = Label(tk, text = "Enter the time to refresh the data in ms and press Enter (default 500ms): ")
 resultLabel.pack()
 
-myEntry = Entry(tk, width=20)
-myEntry.focus()
-myEntry.bind("<Return>",returnEntry)
-myEntry.pack()
+enterMS = Entry(tk, width=20)
+enterMS.focus()
+enterMS.bind("<Return>",returnEntry)
+enterMS.pack()
 
 infoLabel = Label(tk, text = "If the value provided is not an integer the program will assign default value (500ms).")
 infoLabel.pack()
