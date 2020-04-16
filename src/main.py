@@ -9,11 +9,11 @@ tk.resizable(False, False) #Blocking the window from resizable
 def returnEntry(arg=None): #Assigning user input to the ms variable
     global ms
     
-    #If the data is not int, ms = 500ms
+    #If the data is not int, ms = 1000ms
     try: 
         ms = int(enterMS.get())
     except:
-        ms = 500
+        ms = 1000
 
     #Destroy unnecessary labels and entry
     enterMS.destroy()
@@ -23,7 +23,7 @@ def returnEntry(arg=None): #Assigning user input to the ms variable
     #Go to mainFunction()
     mainFunction()
 
-resultLabel = Label(tk, text = "Enter the time to refresh the data in ms and press Enter (default 500ms): ")
+resultLabel = Label(tk, text = "Enter the time to refresh the data in ms and press Enter (default 1000ms): ")
 resultLabel.pack()
 
 enterMS = Entry(tk, width=20)
@@ -31,7 +31,7 @@ enterMS.focus()
 enterMS.bind("<Return>",returnEntry)
 enterMS.pack()
 
-infoLabel = Label(tk, text = "If the value provided is not an integer the program will assign default value (500ms).")
+infoLabel = Label(tk, text = "If the value provided is not an integer the program will assign default value (1000ms).")
 infoLabel.pack()
 
 #Set url with data
@@ -59,7 +59,7 @@ def mainFunction():
 
         #print("Data updated after {}ms.".format(ms)) #Debug line
 
-        tk.after(ms, getData) #Data refresh every x ms (default 500ms)
+        tk.after(ms, getData) #Data refresh every x ms (default 1000ms)
 
     getData() #Go to getData()
 
